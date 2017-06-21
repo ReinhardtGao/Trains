@@ -77,9 +77,9 @@ def cli():
     from_station = stations.get(arguments['<from>'])
     to_station = stations.get(arguments['<to>'])
     date = arguments['<date>']
+    # url set up
     url = "https://kyfw.12306.cn/otn/leftTicket/query?leftTicketDTO.train_date={}&leftTicketDTO.from_station={}&leftTicketDTO.to_station={}&purpose_codes=ADULT".format(
         date, from_station, to_station)
-    # 也可以用map reduce来搞的, 看起来还更容易理解哇
     options = ''.join([
         k for k, v in arguments.items() if v is True
     ])
